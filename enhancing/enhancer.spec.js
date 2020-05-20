@@ -39,17 +39,17 @@ describe('FAIL()', ()=>{
   })
 })
 
-// describe('REPAIR()', ()=>{
-//   it('should accept an item object and return a new item object modified by rules ordained by client for enhancement success', ()=>{
-//     //setup
-//     let expected = {...testItem, enhancement: 7}
-//     let initial = {...testItem, enhancement: 6}
-//     //execute
-//     let actual = enhancer.succeed(initial)
-//     //check
-//     expect(actual.enhancement).toBe(expected.enhancement)
-//   })
-// })
+describe('REPAIR()', ()=>{
+  it('should accept an item object and return a new item object modified by rules ordained by client for enhancement success', ()=>{
+    //setup
+    let expected = {...testItem, durability: 100}
+    let initial = {...testItem, durability: 6}
+    //execute
+    let actual = enhancer.repair(initial)
+    //check
+    expect(actual.durability).toBe(expected.durability)
+  })
+})
 
 
 
