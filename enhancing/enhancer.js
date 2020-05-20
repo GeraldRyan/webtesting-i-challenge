@@ -22,7 +22,15 @@ function succeed(item) {
 }
 
 function fail(item) {
-  return { ...item };
+
+if (item.enhancement < 15){
+return { ...item, enhancement: item.enhancement-5}
+}
+else{
+  return { ...item, enhancement: item.enhancement-10 };
+}
+
+
 }
 
 function repair(item) {
