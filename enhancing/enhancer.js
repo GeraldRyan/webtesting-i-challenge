@@ -11,32 +11,45 @@ module.exports = {
 //   enhancement:0
 // }
 
-function succeed(item) {
+function succeed(item)
+{
 
-  if (item.enhancement !== 20){
-    return { ...item, enhancement: item.enhancement+1 };
+  if (item.enhancement !== 20)
+  {
+    return { ...item, enhancement: item.enhancement + 1 };
   }
-  else {
-    return {...item}
+  else
+  {
+    return { ...item }
   }
 }
 
-function fail(item) {
+function fail(item)
+{
 
-if (item.enhancement < 15){
-return { ...item, enhancement: item.enhancement-5}
+
+  if (item.enhancement > 16)
+  {
+    return { ...item, enhancement: item.enhancement - 1, durability: item.durability - 10 }
+  }
+  else if (item.enhancement < 15)
+  {
+    return { ...item, durability: item.durability - 5 }
+  }
+  else
+  {
+    return { ...item, durability: item.durability - 10 };
+  }
+
+
 }
-else{
-  return { ...item, enhancement: item.enhancement-10 };
-}
 
-
-}
-
-function repair(item) {
+function repair(item)
+{
   return { ...item };
 }
 
-function get(item) {
+function get(item)
+{
   return { ...item };
 }

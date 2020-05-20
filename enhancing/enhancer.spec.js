@@ -28,12 +28,14 @@ describe('FAIL()', ()=>{
 //  - If the item's enhancement level is greater than 16, the enhancement level decreases by 1 (17 goes down to 16, 18 goes down to 17).
 
     //setup
-    let expected = {...testItem, enhancement: 9}
-    let initial = {...testItem, enhancement: 14}
+    let expected = {...testItem, durability: 8, enhancement:17}
+    let initial = {...testItem, durability: 18, enhancement: 18}
     //execute
     let actual = enhancer.fail(initial)
     //check
     expect(actual.enhancement).toBe(expected.enhancement)
+    expect(actual.durability).toBe(expected.durability)
+
   })
 })
 
